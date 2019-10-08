@@ -27,9 +27,10 @@ const initDB = callback => {
         }
     );
 };
-function getDb() {
+
+const getDB = () => {
     assert.ok(_db, "Db has not been initialized. Please call init first.");
     return _db;
-}
+};
 
-module.exports = { getDB, initDb };
+module.exports = { getDB, initDB };

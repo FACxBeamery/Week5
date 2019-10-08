@@ -1,16 +1,16 @@
 const express = require("express");
 const formidable = require("express-formidable");
 const router = require("./router.js");
-const initDb = require("../database/connection.js").initDb;
-const getDb = require("../database/connection.js").getDb;
+const initDB = require("../database/connection.js").initDB;
+const getDB = require("../database/connection.js").getDB;
 
 const app = express();
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 // app.use("/", exampleRoute);
 
-initDb(error => {
+initDB(error => {
     app.listen(port, error => {
         if (error) {
             throw error; //
