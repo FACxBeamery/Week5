@@ -3,37 +3,13 @@ const mongoClient = require("mongodb").MongoClient;
 
 let _db;
 
-// const initDB = callback => {
-//     if (_db) {
-//         console.warn("Trying to init DB again!");
-//         return callback(null, _db);
-//     }
-
-//     mongoClient.connect(
-//         "mongo://localhost:27017/",
-//         { useNewUrlParser: true, useUnifiedTopology: true },
-//         (error, db) => {
-//             if (error) {
-//                 return callback(error);
-//             }
-
-//             console.log(
-//                 "DB initialized - connected to: " +
-//                     config.db.connectionString.split("@")[1]
-//             );
-//             _db = db;
-//             return callback(null, _db);
-//         }
-//     );
-// };
-
 const initDB = () => {
     return new Promise((resolve, reject) => {
         const dbConnect = (error, client) => {
             if (error) {
                 reject(error);
             } else {
-                console.log("reached connection to db");
+                console.log("Initializing DB!");
                 _db = client.db("trainingWorkshops");
                 resolve(_db);
             }
@@ -53,7 +29,7 @@ const initDB = () => {
 };
 
 const getDB = () => {
-    assert.ok(_db, "Db has not been initialized. Please call init first.");
+    assert.ok(_db, "Db has not been initialized. Please call initDB first.");
     return _db;
 };
 
