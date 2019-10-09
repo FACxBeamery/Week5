@@ -13,11 +13,17 @@
         <form id="form">
             <label for="topic" class="visuallyhidden">Input for topic</label>
             <input
-                name="topic"
                 type="text"
+                id="topic"
+                name="topic"
+                label="find a resource"
                 placeholder="What topic are you stuck on?"
+                required
             />
+            <button type="button" id="submitButton">Send for help</button>
         </form>
     </body>
-    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="./js/APICalls.js"></script>
+    <script type="text/javascript" src="./js/DOMManip.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
 </html>

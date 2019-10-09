@@ -1,6 +1,10 @@
+const express = require("express");
+const formidable = require("express-formidable");
 const createResource = require("../../database/queries/createResource.js");
 const getDB = require("../../database/connection.js").getDB;
 const Joi = require("joi");
+
+express().use(formidable());
 
 const addResource = (req, res) => {
     const schema = Joi.object().keys({

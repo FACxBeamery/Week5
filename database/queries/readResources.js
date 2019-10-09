@@ -1,6 +1,6 @@
-const readResources = (db, callback) => {
+const readResources = (db, callback, topicFilter) => {
     db.collection("resources")
-        .find()
+        .find({ topic: topicFilter })
         .toArray(callback);
 };
 
