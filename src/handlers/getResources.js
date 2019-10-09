@@ -14,7 +14,7 @@ const getResources = (req, res) => {
 
             return res.status(200).send(result);
         },
-        req.query.topic
+        req.params.topic
     );
 };
 
