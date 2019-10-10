@@ -1,5 +1,7 @@
 const getResourcesAPI = () => {
-	const topicValue = document.getElementById("topicToFind").value;
+	const topicValue = document
+		.getElementById("topicToFind")
+		.value.toLowerCase();
 
 	fetch(`/resources/${topicValue}`, {
 		method: "GET",
