@@ -41,9 +41,9 @@ document.getElementById("testButton").addEventListener("click", event => {
     // };
 
     const body = {
-        topic: "nodeTest",
+        topic: "nodeTest67578",
         dateAdded: new Date(Date.now()).toUTCString(),
-        comment: "commentTest",
+        comment: "commentTest78678787",
         resourceUrl: "www.urltesting.com"
     };
 

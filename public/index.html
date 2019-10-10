@@ -10,19 +10,60 @@
         <header>
             <h1>Help! I'm stuck on...</h1>
         </header>
-        <form id="form">
-            <label for="topic" class="visuallyhidden">Input for topic</label>
-            <input
-                type="text"
-                id="topic"
-                name="topic"
-                label="find a resource"
-                placeholder="What topic are you stuck on?"
-                required
-            />
-            <button type="submit" id="submitButton">Send for help</button>
-            <button type="submit" id="testButton">Test</button>
-        </form>
+        <section>
+            <form id="form">
+                <label for="topic" class="visuallyhidden"
+                    >Input for topic</label
+                >
+                <input
+                    type="text"
+                    id="topic"
+                    name="topic"
+                    label="find a resource"
+                    placeholder="What topic are you stuck on?"
+                    required
+                />
+                <button type="submit" id="submitButton">Send for help</button>
+            </form>
+        </section>
+        <section>
+            <form id="form">
+                <label for="topicToAdd" class="visuallyhidden"
+                    >Topic to add:
+                </label>
+                <input
+                    type="text"
+                    id="topictoAddText"
+                    name="topicToAdd"
+                    label="find a resource"
+                    placeholder="Topic"
+                    required
+                />
+                <label for="urlToAdd" class="visuallyhidden"
+                    >URL to add:
+                </label>
+                <input
+                    type="text"
+                    id="urlToAddText"
+                    name="urlToAdd"
+                    label="find a resource"
+                    placeholder="url"
+                    required
+                />
+                <label for="commentToAdd" class="visuallyhidden"
+                    >Comment about resource:
+                </label>
+                <input
+                    type="text"
+                    id="commentToAddText"
+                    name="commentToAdd"
+                    label="find a resource"
+                    placeholder="comment"
+                    required
+                />
+                <button type="submit" id="testButton">Add resource</button>
+            </form>
+        </section>
     </body>
     <script type="text/javascript" src="./js/APICalls.js"></script>
     <script type="text/javascript" src="./js/DOMManip.js"></script>
