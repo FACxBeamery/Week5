@@ -17,7 +17,8 @@ const renderResources = resource => {
 	// const resourceForm = document.createElement("form");
 	const resourceDiv = document.createElement("div");
 
-	const resourceURL = document.createElement("p");
+	const resourceURL = document.createElement("a");
+	resourceURL.setAttribute("href", resource.resourceUrl);
 	resourceURL.textContent = resource.resourceUrl;
 
 	const resourceComment = document.createElement("p");
