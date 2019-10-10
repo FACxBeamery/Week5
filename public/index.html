@@ -3,7 +3,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie-edge" />
-
+		<link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="style.css" />
 		<title>Find a Resource</title>
 	</head>
@@ -11,9 +11,9 @@
 		<header>
 			<h1>Help! I'm stuck on...</h1>
 		</header>
-		<section>
+		<section id="section-form-find-topic">
 			<form id="form-find-topic">
-				<label for="topicToFind">Input for topic</label>
+				<label for="topic-to-find">Input for topic</label>
 				<input
 					type="text"
 					id="topicToFind"
@@ -22,14 +22,14 @@
 					placeholder="What topic are you stuck on?"
 					required
 				/>
-				<button type="submit" id="find-topic-button">
+				<button type="submit" id="find-topic-button" class="buttons">
 					Send for help
 				</button>
 			</form>
 		</section>
-		<section id="section-add-topic" style="display: none">
-			<form id="formAddTopic">
-				<label for="topicToAdd">Topic to add: </label>
+		<section id="section-form-add-topic" style="display: none">
+			<form id="form-add-topic">
+				<label for="topic-to-add">Topic to add: </label>
 				<input
 					type="text"
 					id="topictoAdd"
@@ -58,7 +58,7 @@
 					placeholder="comment about your resource"
 					required
 				/>
-				<button type="submit" id="add-topic-button">
+				<button type="submit" id="add-topic-button" class="buttons">
 					Add resource
 				</button>
 			</form>
