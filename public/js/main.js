@@ -1,6 +1,7 @@
-document.getElementById("submitButton").addEventListener("click", event => {
-	event.preventDefault();
-	const topicValue = document.getElementById("topic").value;
+
+document.getElementById("findTopicButton").addEventListener("click", event => {
+    event.preventDefault();
+    const topicValue = document.getElementById("topicToFind").value;
 
 	// //API CALL. CALL FUNCTION ON READY**************
 	// fetch(`/resources?topic=${topicValue}`, {
@@ -31,21 +32,15 @@ document.getElementById("submitButton").addEventListener("click", event => {
 	//API CALL**************
 });
 
-document.getElementById("testButton").addEventListener("click", event => {
-	event.preventDefault();
-	// const body = {
-	//     topic: document.getElementById().value,
-	//     dateAdded: new Date(Date.now()).toUTCString(),
-	//     comment: document.getElementById().value,
-	//     resourceUrl: document.getElementById().value,
-	// };
+document.getElementById("addTopicButton").addEventListener("click", event => {
+    event.preventDefault();
+    const body = {
+        topic: document.getElementById("topictoAdd").value,
+        dateAdded: new Date(Date.now()).toUTCString(),
+        comment: document.getElementById("commentToAdd").value,
+        resourceUrl: document.getElementById("urlToAdd").value
+    };
 
-	const body = {
-		topic: "nodeTest67578",
-		dateAdded: new Date(Date.now()).toUTCString(),
-		comment: "commentTest78678787",
-		resourceUrl: "www.urltesting.com"
-	};
 
 	fetch("/resources", {
 		method: "POST",
