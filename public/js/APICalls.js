@@ -22,8 +22,8 @@ const getResourcesAPI = () => {
 
 const postResourcesAPI = () => {
 	const body = {
-		topic: document.getElementById("topictoAdd").value,
-		dateAdded: new Date(Date.now()).toUTCString(),
+		topic: document.getElementById("topictoAdd").value.toLowerCase(),
+		dateAdded: Date.now(),
 		comment: document.getElementById("commentToAdd").value,
 		resourceUrl: document.getElementById("urlToAdd").value
 	};

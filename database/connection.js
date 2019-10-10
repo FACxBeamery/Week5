@@ -15,8 +15,10 @@ const initDB = () => {
 				console.log("Initializing DB!");
 				_client = client;
 				_db = client.db("trainingWorkshops");
-				deleteAllData(_db);
-				populateDB(_db);
+				if (!_db) {
+					deleteAllData(_db);
+					populateDB(_db);
+				}
 				resolve(_db);
 			}
 		};

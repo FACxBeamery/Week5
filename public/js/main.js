@@ -11,4 +11,5 @@ document.getElementById("add-topic-button").addEventListener("click", event => {
 	event.preventDefault();
 
 	postResourcesAPI();
+	setTimeout(getResourcesAPI(), 600);
 });

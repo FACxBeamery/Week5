@@ -19,16 +19,20 @@ const addResourcesToPage = resources => {
 const renderResources = resource => {
 	// const resourceForm = document.createElement("form");
 	const resourceDiv = document.createElement("div");
+	resourceDiv.setAttribute("id", "resource-result-div");
 
 	const resourceURL = document.createElement("a");
 	resourceURL.setAttribute("href", resource.resourceUrl);
 	resourceURL.textContent = resource.resourceUrl;
+	resourceURL.setAttribute("id", "resource-url");
 
 	const resourceComment = document.createElement("p");
 	resourceComment.textContent = `Comments: ${resource.comment}`;
+	resourceComment.setAttribute("id", "resource-comment");
 
 	const resourceTopic = document.createElement("p");
 	resourceTopic.textContent = `Topic: ${resource.topic}`;
+	resourceTopic.setAttribute("id", "resource-topic");
 	//resourceDiv.setAttribute("id", )
 
 	// add URL, topic, comment from search here?
