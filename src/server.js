@@ -13,11 +13,9 @@ app.use(formidable());
 app.use(router);
 
 initDB()
-	.then(db => deleteAllData(db))
-	.then(db => populateDB(db))
-	.then(_db => {
-		app.listen(port, () => {
-			console.log(`API Up and running on port ${port}`);
-		});
-	})
-	.catch(console.error);
+    .then(_db => {
+        app.listen(port, () => {
+            console.log(`API Up and running on port ${port}`);
+        });
+    })
+    .catch(console.error);

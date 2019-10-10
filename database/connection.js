@@ -1,7 +1,10 @@
 const assert = require("assert");
 const mongoClient = require("mongodb").MongoClient;
+const deleteAllData = require("../database/dbBuild.js").deleteAllData;
+const populateDB = require("../database/dbBuild.js").populateDB;
 
 let _db;
+let _client;
 
 const initDB = () => {
     return new Promise((resolve, reject) => {
@@ -10,7 +13,10 @@ const initDB = () => {
                 reject(error);
             } else {
                 console.log("Initializing DB!");
+                _client = client;
                 _db = client.db("trainingWorkshops");
+                deleteAllData(_db);
+                populateDB(_db);
                 resolve(_db);
             }
         };
