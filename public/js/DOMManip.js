@@ -2,11 +2,12 @@ const addResourcesToPage = resources => {
 	resetResourcesContainer();
 	const resourcesContainer = document.getElementById("resources-container");
 	resourcesContainer.id = "resources-container";
+
 	resources.forEach(resource => {
 		resourcesContainer.appendChild(renderResources(resource));
+		displayForm = document.getElementById("section-add-topic");
+		displayForm.style.display = "block";
 	});
-	displayForm = document.getElementById("section-add-topic");
-	displayForm.style.display = "block";
 };
 
 //render resources on page
@@ -24,10 +25,10 @@ const renderResources = resource => {
 	resourceURL.textContent = resource.resourceUrl;
 
 	const resourceComment = document.createElement("p");
-	resourceComment.textContent = resource.comment;
+	resourceComment.textContent = `Comments: ${resource.comment}`;
 
 	const resourceTopic = document.createElement("p");
-	resourceTopic.textContent = resource.topic;
+	resourceTopic.textContent = `Topic: ${resource.topic}`;
 	//resourceDiv.setAttribute("id", )
 
 	// add URL, topic, comment from search here?

@@ -10,8 +10,12 @@ const getResourcesAPI = () => {
 		.then(res => res.json())
 		.then(data => (allResources = data))
 		.then(allResources => {
-			//console.log(allResources);
-			addResourcesToPage(allResources);
+			if (allResources.length > 0) {
+				//console.log("last then", allResources);
+				addResourcesToPage(allResources);
+			} else {
+				alert("no topics for that :(");
+			}
 		})
 		.catch(console.error);
 };
