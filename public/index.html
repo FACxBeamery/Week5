@@ -3,6 +3,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie-edge" />
+
 		<link rel="stylesheet" type="text/css" href="style.css" />
 		<title>Find a Resource</title>
 	</head>
@@ -11,10 +12,8 @@
 			<h1>Help! I'm stuck on...</h1>
 		</header>
 		<section>
-			<form id="formFindTopic">
-				<label for="topicToFind" class="visuallyhidden"
-					>Input for topic</label
-				>
+			<form id="form-find-topic">
+				<label for="topicToFind">Input for topic</label>
 				<input
 					type="text"
 					id="topicToFind"
@@ -23,16 +22,14 @@
 					placeholder="What topic are you stuck on?"
 					required
 				/>
-				<button type="submit" id="findTopicButton">
+				<button type="submit" id="find-topic-button">
 					Send for help
 				</button>
 			</form>
 		</section>
-		<section>
+		<section id="section-add-topic" style="display: none">
 			<form id="formAddTopic">
-				<label for="topicToAdd" class="visuallyhidden"
-					>Topic to add:
-				</label>
+				<label for="topicToAdd">Topic to add: </label>
 				<input
 					type="text"
 					id="topictoAdd"
@@ -41,9 +38,7 @@
 					placeholder="Topic"
 					required
 				/>
-				<label for="urlToAdd" class="visuallyhidden"
-					>URL to add:
-				</label>
+				<label for="urlToAdd">URL to add: </label>
 				<input
 					type="text"
 					id="urlToAdd"
@@ -63,7 +58,9 @@
 					placeholder="comment about your resource"
 					required
 				/>
-				<button type="submit" id="addTopicButton">Add resource</button>
+				<button type="submit" id="add-topic-button">
+					Add resource
+				</button>
 			</form>
 		</section>
 		<section id="resources-container"></section>
