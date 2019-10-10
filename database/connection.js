@@ -1,31 +1,10 @@
 const assert = require("assert");
 const mongoClient = require("mongodb").MongoClient;
+const deleteAllData = require("../database/dbBuild.js").deleteAllData;
+const populateDB = require("../database/dbBuild.js").populateDB;
 
 let _db;
-
-// const initDB = callback => {
-//     if (_db) {
-//         console.warn("Trying to init DB again!");
-//         return callback(null, _db);
-//     }
-
-//     mongoClient.connect(
-//         "mongo://localhost:27017/",
-//         { useNewUrlParser: true, useUnifiedTopology: true },
-//         (error, db) => {
-//             if (error) {
-//                 return callback(error);
-//             }
-
-//             console.log(
-//                 "DB initialized - connected to: " +
-//                     config.db.connectionString.split("@")[1]
-//             );
-//             _db = db;
-//             return callback(null, _db);
-//         }
-//     );
-// };
+let _client;
 
 const initDB = () => {
     return new Promise((resolve, reject) => {
@@ -33,8 +12,11 @@ const initDB = () => {
             if (error) {
                 reject(error);
             } else {
-                console.log("reached connection to db");
+                console.log("Initializing DB!");
+                _client = client;
                 _db = client.db("trainingWorkshops");
+                deleteAllData(_db);
+                populateDB(_db);
                 resolve(_db);
             }
         };
@@ -53,7 +35,7 @@ const initDB = () => {
 };
 
 const getDB = () => {
-    assert.ok(_db, "Db has not been initialized. Please call init first.");
+    assert.ok(_db, "Db has not been initialized. Please call initDB first.");
     return _db;
 };
 
