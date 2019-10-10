@@ -39,9 +39,9 @@ const getDB = () => {
 	return _db;
 };
 
-function closeDb() {
+const closeDB = () => {
 	_db = null;
 
 	return _client.close();
-}
+};
 module.exports = { getDB, initDB, closeDB };

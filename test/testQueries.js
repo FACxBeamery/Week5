@@ -7,17 +7,13 @@ const getDB = require("../database/connection.js").getDB;
 const closeDB = require("../database/connection.js").closeDB;
 
 const readResources = require("../database/queries/readResources");
-const createResources = require("../database/queries/createResources");
-
+const createResources = require("../database/queries/createResource");
 
 test("initialising the database", t => {
-    initDB().then(db => {
-      deleteAllData(db)
-        .then(populateDB(db))
-        .then(closeDB)
-        .then(() => t.end());
-    });
-
-
-
-    
+	initDB().then(db => {
+		deleteAllData(db)
+			.then(populateDB(db))
+			.then(closeDB)
+			.then(() => t.end());
+	});
+});
