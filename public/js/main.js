@@ -11,10 +11,5 @@ document.getElementById("add-topic-button").addEventListener("click", event => {
 	event.preventDefault();
 
 	postResourcesAPI();
-	setTimeout(() => {
-		const topicToAddValue = document.getElementById("topictoAdd").value;
-		// if (topicValue.length > 0) {
-		getResourcesAPI(topicToAddValue);
-		// }
-	}, 600);
+	setTimeout(getResourcesAPI("topicToFind"), 600);
 });

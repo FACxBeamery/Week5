@@ -5,7 +5,7 @@ const addResourcesToPage = resources => {
 
 	resources.forEach(resource => {
 		resourcesContainer.appendChild(renderResources(resource));
-		const displayForm = document.getElementById("section-add-topic");
+		const displayForm = document.getElementById("section-form-add-topic");
 		displayForm.style.display = "block";
 	});
 };
