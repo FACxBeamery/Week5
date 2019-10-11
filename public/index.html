@@ -17,8 +17,10 @@
 		<main>
 			<div class="overlay"></div>
 			<section id="section-form-find-topic">
-				<form id="form-find-topic">
-					<label for="topic-to-find">Input for topic</label>
+				<form id="form-find-topic" class="form">
+					<label class="form__label" for="topic-to-find"
+						>Input for topic</label
+					>
 					<input
 						type="text"
 						id="topic-to-find"
@@ -26,6 +28,7 @@
 						label="find-resources"
 						placeholder="What topic are you stuck on?"
 						required
+						class="form__input"
 					/>
 					<button
 						type="submit"
@@ -36,9 +39,12 @@
 					</button>
 				</form>
 			</section>
+			<section id="resources-container"></section>
 			<section id="section-form-add-topic" style="display: none">
-				<form id="form-add-topic">
-					<label for="topic-to-add">Topic to add: </label>
+				<form id="form-add-topic" class="form-add-topic">
+					<label class="form-add-topic__label" for="topic-to-add"
+						>Topic to add:
+					</label>
 					<input
 						type="text"
 						id="topic-to-add"
@@ -46,9 +52,11 @@
 						label="add-resource-topic"
 						placeholder="Input topic of your new resource"
 						required
+						class="form-add-topic__input"
 					/>
 					<label for="url-to-add">URL to add: </label>
 					<input
+						class="form-add-topic__input"
 						type="text"
 						id="url-to-add"
 						name="url-to-add"
@@ -61,6 +69,7 @@
 						>Comment about resource:
 					</label>
 					<input
+						class="form-add-topic__input"
 						type="text"
 						id="comment-to-add"
 						name="comment-to-add"
@@ -74,7 +83,6 @@
 					</button>
 				</form>
 			</section>
-			<section id="resources-container"></section>
 		</main>
 	</body>
 

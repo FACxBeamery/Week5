@@ -2,9 +2,9 @@ const test = require("tape");
 const deleteAllData = require("../database/dbBuild").deleteAllData;
 const populateDB = require("../database/dbBuild").populateDB;
 
-const initDB = require("../database/connection.js").initDB;
-const getDB = require("../database/connection.js").getDB;
-const closeDB = require("../database/connection.js").closeDB;
+const initDB = require("../database/dbTestConnection.js").initDB;
+// const getDB = require("../database/dbTestConnection.js").getDB;
+const closeDB = require("../database/dbTestConnection.js").closeDB;
 
 const readResources = require("../database/queries/readResources");
 const createResource = require("../database/queries/createResource");
@@ -18,14 +18,10 @@ test("initialising the database", t => {
     });
 });
 
-test("async test 1", t => {
-    // state how many test assertions will be made
+test("Testing readResources function that it retrieves the correct number of resources", t => {
     t.plan(1);
-    // open new db connection for these tests
     initDB()
         .then(db => {
-            //put tests here, using db returned from initDb promise
-            //   findAllCheeses(db)
             readResources(
                 db,
                 (error, result) => {
@@ -45,7 +41,7 @@ test("async test 1", t => {
         .then(closeDB);
 });
 
-test("async test 2", t => {
+test("Testing readResources function that it retrieves the correct order of the resources", t => {
     t.plan(4);
 
     initDB()
@@ -84,7 +80,7 @@ test("async test 2", t => {
         .then(closeDB);
 });
 
-test("async test 3", t => {
+test("Testing readResources function that it retrieves the correct content type of resources", t => {
     t.plan(3);
 
     initDB()
@@ -119,8 +115,8 @@ test("async test 3", t => {
         .then(closeDB);
 });
 
-test("async test 4", t => {
-    // t.plan(3);
+test("Testing the createResources functions that it adds a resource that can be retrieved afterwards.", t => {
+    t.plan(4);
 
     const resourceToAdd = {
         topic: "fetch",

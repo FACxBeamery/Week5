@@ -24,21 +24,33 @@ const getResourcesAPI = idOfTopicField => {
 };
 
 const postResourcesAPI = () => {
-    const body = {
-        topic: document.getElementById("topic-to-add").value.toLowerCase(),
-        dateAdded: Date.now(),
-        comment: document.getElementById("comment-to-add").value,
-        resourceUrl: document.getElementById("url-to-add").value
-    };
-    fetch("/resources", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body)
-    })
-        .then(res => res.json())
-        .then(data => (allData = data))
-        .then(allData => {
-            resourceAddOverlay();
-        })
-        .catch(console.error);
+
+	const body = {
+		topic: document.getElementById("topic-to-add").value.toLowerCase(),
+		dateAdded: Date.now(),
+		comment: document.getElementById("comment-to-add").value,
+		resourceUrl: document.getElementById("url-to-add").value
+	};
+	if (!(body.topic && body.comment && body.resourceUrl)) {
+		emptyAddOverlay();
+	} else {
+		fetch("/resources", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(body)
+		})
+			.then(res => {
+				if (!res.ok) {
+					throw new Error("Edit query invalid");
+				} else {
+					return res.json();
+				}
+			})
+			.then(data => (allData = data))
+			.then(allData => {
+				resourceAddOverlay();
+			})
+			.catch(failJoiOverlay());
+	}
+
 };
