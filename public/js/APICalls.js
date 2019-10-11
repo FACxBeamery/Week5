@@ -24,10 +24,10 @@ const getResourcesAPI = idOfTopicField => {
 
 const postResourcesAPI = () => {
 	const body = {
-		topic: document.getElementById("topictoAdd").value.toLowerCase(),
+		topic: document.getElementById("topic-to-add").value.toLowerCase(),
 		dateAdded: Date.now(),
-		comment: document.getElementById("commentToAdd").value,
-		resourceUrl: document.getElementById("urlToAdd").value
+		comment: document.getElementById("comment-to-add").value,
+		resourceUrl: document.getElementById("url-to-add").value
 	};
 	fetch("/resources", {
 		method: "POST",

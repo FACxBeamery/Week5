@@ -4,12 +4,12 @@ document
 	.getElementById("find-topic-button")
 	.addEventListener("click", event => {
 		event.preventDefault();
-		getResourcesAPI("topicToFind");
+		getResourcesAPI("topic-to-find");
 	});
 
 document.getElementById("add-topic-button").addEventListener("click", event => {
 	event.preventDefault();
 
 	postResourcesAPI();
-	setTimeout(getResourcesAPI("topicToFind"), 600);
+	setTimeout(getResourcesAPI("topic-to-find"), 600);
 });
