@@ -138,7 +138,9 @@ const failJoiOverlay = () => {
 	overlay.style.display = "block";
 	const para = document.createElement("p");
 	para.classList.add("joi-fail-add-message");
-	const node = document.createTextNode(`Sorry, that isn't a valid input `);
+	const node = document.createTextNode(
+		`Sorry, that isn't a valid input, check your link is valid! We need a www. format.  `
+	);
 	para.appendChild(node);
 	overlay.appendChild(para);
 	setTimeout(() => {
@@ -146,5 +148,5 @@ const failJoiOverlay = () => {
 			overlay.removeChild(overlay.firstChild);
 		}
 		overlay.style.display = "none";
-	}, 1500);
+	}, 4000);
 };
