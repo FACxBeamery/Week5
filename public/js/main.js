@@ -10,6 +10,7 @@ document
 document.getElementById("add-topic-button").addEventListener("click", event => {
 	event.preventDefault();
 
-	postResourcesAPI();
-	setTimeout(getResourcesAPI("topic-to-find"), 600);
+	postResourcesAPI()
+		.then(getResourcesAPI("topic-to-find"))
+		.catch(failJoiOverlay());
 });
