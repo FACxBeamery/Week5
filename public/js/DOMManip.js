@@ -68,14 +68,14 @@ const noTopicOverLay = () => {
 	);
 	para.appendChild(node);
 	overlay.appendChild(para);
-	const displayForm = document.getElementById("section-add-topic");
+	const displayForm = document.getElementById("section-form-add-topic");
 	displayForm.style.display = "block";
 	setTimeout(() => {
 		while (overlay.firstChild) {
 			overlay.removeChild(overlay.firstChild);
 		}
 		overlay.style.display = "none";
-	}, 3000);
+	}, 1500);
 };
 
 const emptySearchOverlay = () => {
@@ -86,14 +86,14 @@ const emptySearchOverlay = () => {
 	const node = document.createTextNode("Please enter a topic to search by!");
 	para.appendChild(node);
 	overlay.appendChild(para);
-	const displayForm = document.getElementById("section-add-topic");
+	const displayForm = document.getElementById("section-form-add-topic");
 	displayForm.style.display = "block";
 	setTimeout(() => {
 		while (overlay.firstChild) {
 			overlay.removeChild(overlay.firstChild);
 		}
 		overlay.style.display = "none";
-	}, 3000);
+	}, 1500);
 };
 
 const resourceAddConfirmation = () => {
@@ -101,7 +101,7 @@ const resourceAddConfirmation = () => {
 	overlay.style.display = "block";
 	const para = document.createElement("p");
 	para.classList.add("post-success-message");
-	const node = document.createTextNode(`Thank you for adding a resource!}`);
+	const node = document.createTextNode(`Thank you for adding a resource!`);
 	para.appendChild(node);
 	overlay.appendChild(para);
 	setTimeout(() => {
@@ -109,5 +109,5 @@ const resourceAddConfirmation = () => {
 			overlay.removeChild(overlay.firstChild);
 		}
 		overlay.style.display = "none";
-	}, 3000);
+	}, 1500);
 };
