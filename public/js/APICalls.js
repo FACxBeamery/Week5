@@ -1,25 +1,31 @@
-const getResourcesAPI = () => {
+const getResourcesAPI = idOfTopicField => {
 	const topicValue = document
-		.getElementById("topicToFind")
+		.getElementById(idOfTopicField)
 		.value.toLowerCase();
-
-	fetch(`/resources/${topicValue}`, {
-		method: "GET",
-		headers: { "Content-Type": "application/json" }
-	})
-		.then(res => res.json())
-		.then(data => (allResources = data))
-		.then(allResources => {
-			//console.log(allResources);
-			addResourcesToPage(allResources);
+	if (!topicValue) {
+		emptySearchOverlay();
+	} else {
+		fetch(`/resources/${topicValue}`, {
+			method: "GET",
+			headers: { "Content-Type": "application/json" }
 		})
-		.catch(console.error);
+			.then(res => res.json())
+			.then(data => (allResources = data))
+			.then(allResources => {
+				if (allResources.length > 0) {
+					addResourcesToPage(allResources);
+				} else {
+					noTopicOverLay();
+				}
+			})
+			.catch(console.error);
+	}
 };
 
 const postResourcesAPI = () => {
 	const body = {
-		topic: document.getElementById("topictoAdd").value,
-		dateAdded: new Date(Date.now()).toUTCString(),
+		topic: document.getElementById("topictoAdd").value.toLowerCase(),
+		dateAdded: Date.now(),
 		comment: document.getElementById("commentToAdd").value,
 		resourceUrl: document.getElementById("urlToAdd").value
 	};
@@ -30,6 +36,8 @@ const postResourcesAPI = () => {
 	})
 		.then(res => res.json())
 		.then(data => (allData = data))
-		.then(allData => console.log(allData))
+		.then(allData => {
+			resourceAddConfirmation();
+		})
 		.catch(console.error);
 };

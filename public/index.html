@@ -1,71 +1,73 @@
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie-edge" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie-edge" />
 
-		<link rel="stylesheet" type="text/css" href="style.css" />
-		<title>Find a Resource</title>
-	</head>
-	<body>
-		<header>
-			<h1>Help! I'm stuck on...</h1>
-		</header>
-		<section>
-			<form id="form-find-topic">
-				<label for="topicToFind">Input for topic</label>
-				<input
-					type="text"
-					id="topicToFind"
-					name="topictoFind"
-					label="find resources"
-					placeholder="What topic are you stuck on?"
-					required
-				/>
-				<button type="submit" id="find-topic-button">
-					Send for help
-				</button>
-			</form>
-		</section>
-		<section id="section-add-topic" style="display: none">
-			<form id="formAddTopic">
-				<label for="topicToAdd">Topic to add: </label>
-				<input
-					type="text"
-					id="topictoAdd"
-					name="topicToAdd"
-					label="add resource topic"
-					placeholder="Topic"
-					required
-				/>
-				<label for="urlToAdd">URL to add: </label>
-				<input
-					type="text"
-					id="urlToAdd"
-					name="urlToAdd"
-					label="add resource url"
-					placeholder="Input your resource's URL"
-					required
-				/>
-				<label for="commentToAdd" class="visuallyhidden"
-					>Comment about resource:
-				</label>
-				<input
-					type="text"
-					id="commentToAdd"
-					name="commentToAdd"
-					label="add resource comment"
-					placeholder="comment about your resource"
-					required
-				/>
-				<button type="submit" id="add-topic-button">
-					Add resource
-				</button>
-			</form>
-		</section>
-		<section id="resources-container"></section>
-	</body>
-	<script type="text/javascript" src="./js/APICalls.js"></script>
-	<script type="text/javascript" src="./js/DOMManip.js"></script>
-	<script type="text/javascript" src="./js/main.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+
+        <title>Find a Resource</title>
+    </head>
+    <body>
+        <div class="overlay"></div>
+        <header>
+            <h1>Help! I'm stuck on...</h1>
+        </header>
+        <section>
+            <form id="form-find-topic">
+                <label for="topicToFind">Input for topic</label>
+                <input
+                    type="text"
+                    id="topicToFind"
+                    name="topictoFind"
+                    label="find resources"
+                    placeholder="What topic are you stuck on?"
+                    required
+                />
+                <button type="submit" id="find-topic-button">
+                    Send for help
+                </button>
+            </form>
+        </section>
+        <section id="section-add-topic" style="display: none">
+            <form id="formAddTopic">
+                <label for="topicToAdd">Topic to add: </label>
+                <input
+                    type="text"
+                    id="topictoAdd"
+                    name="topicToAdd"
+                    label="add resource topic"
+                    placeholder="Topic"
+                    required
+                />
+                <label for="urlToAdd">URL to add: </label>
+                <input
+                    type="text"
+                    id="urlToAdd"
+                    name="urlToAdd"
+                    label="add resource url"
+                    placeholder="Input your resource's URL"
+                    required
+                />
+                <label for="commentToAdd" class="visuallyhidden"
+                    >Comment about resource:
+                </label>
+                <input
+                    type="text"
+                    id="commentToAdd"
+                    name="commentToAdd"
+                    label="add resource comment"
+                    placeholder="comment about your resource"
+                    required
+                />
+                <button type="submit" id="add-topic-button">
+                    Add resource
+                </button>
+            </form>
+        </section>
+        <section id="resources-container"></section>
+    </body>
+    <script type="text/javascript" src="./js/APICalls.js"></script>
+    <script type="text/javascript" src="./js/DOMManip.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
 </html>
