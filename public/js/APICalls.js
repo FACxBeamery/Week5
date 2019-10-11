@@ -37,7 +37,7 @@ const postResourcesAPI = () => {
 		.then(res => res.json())
 		.then(data => (allData = data))
 		.then(allData => {
-			resourceAddConfirmation();
+			resourceAddOverlay();
 		})
 		.catch(console.error);
 };
