@@ -3,7 +3,8 @@
 	"version": "1.0.0",
 	"main": "placeholder.js",
 	"scripts": {
-		"test": "node test/testQueries.js | tap-spec"
+		"test": "node test/testQueries.js | tap-spec",
+		"start": "node src/server.js"
 	},
 	"author": "",
 	"license": "ISC",
