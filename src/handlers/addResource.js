@@ -41,7 +41,23 @@ const addResource = (req, res) => {
             res.status(201).send(result);
         })
         .catch(error => {
-            res.status(400).send("Validation failed.");
+            const overlay = document.querySelector(".overlay");
+            overlay.style.display = "block";
+            const para = document.createElement("p");
+            para.classList.add("invalid-add-message");
+            const node = document.createTextNode(
+                `The resource you are wanting to add is of the wrong format! ${error}`
+            );
+            para.appendChild(node);
+            overlay.appendChild(para);
+            setTimeout(() => {
+                while (overlay.firstChild) {
+                    overlay.removeChild(overlay.firstChild);
+                }
+                overlay.style.display = "none";
+            }, 2000);
+            res.status(400).send();
+            // res.status(400).send("Validation failed.");
         });
 };
 

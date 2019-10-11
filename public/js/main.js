@@ -4,11 +4,17 @@ document
 	.getElementById("find-topic-button")
 	.addEventListener("click", event => {
 		event.preventDefault();
-		getResourcesAPI();
+		getResourcesAPI("topicToFind");
 	});
 
 document.getElementById("add-topic-button").addEventListener("click", event => {
 	event.preventDefault();
 
 	postResourcesAPI();
+	setTimeout(() => {
+		const topicToAddValue = document.getElementById("topictoAdd").value;
+		// if (topicValue.length > 0) {
+		getResourcesAPI(topicToAddValue);
+		// }
+	}, 600);
 });
