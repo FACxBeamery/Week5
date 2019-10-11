@@ -48,6 +48,7 @@ const postResourcesAPI = () => {
 			.then(allData => {
 				resourceAddOverlay();
 			})
+			.then(getResourcesAPI("topic-to-find"))
 			.catch(failJoiOverlay());
 	}
 };

@@ -10,7 +10,7 @@ document
 document.getElementById("add-topic-button").addEventListener("click", event => {
 	event.preventDefault();
 
-	postResourcesAPI()
-		.then(getResourcesAPI("topic-to-find"))
-		.catch(failJoiOverlay());
+	postResourcesAPI();
+	// .then(result => getResourcesAPI("topic-to-find"))
+	// .catch(console.error);
 });
