@@ -2,9 +2,9 @@ const test = require("tape");
 const deleteAllData = require("../database/dbBuild").deleteAllData;
 const populateDB = require("../database/dbBuild").populateDB;
 
-const initDB = require("../database/dbTestConnection.js").initDB;
+const initDB = require("../database/connection.js").initDB;
 // const getDB = require("../database/dbTestConnection.js").getDB;
-const closeDB = require("../database/dbTestConnection.js").closeDB;
+const closeDB = require("../database/connection.js").closeDB;
 
 const readResources = require("../database/queries/readResources");
 const createResource = require("../database/queries/createResource");

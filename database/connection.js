@@ -1,3 +1,4 @@
+require("dotenv").config();
 const assert = require("assert");
 const mongoClient = require("mongodb").MongoClient;
 const deleteAllData = require("../database/dbBuild.js").deleteAllData;
@@ -5,6 +6,16 @@ const populateDB = require("../database/dbBuild.js").populateDB;
 
 let _db;
 let _client;
+
+let dbUrl;
+
+if (process.env.NODE_ENV === "test") {
+    dbUrl = process.env.DATABASE_URL_TEST;
+} else {
+    dbUrl = process.env.DATABASE_URL;
+}
+
+const dbConfig = { useNewUrlParser: true, useUnifiedTopology: true };
 
 const initDB = () => {
     return new Promise((resolve, reject) => {
@@ -26,11 +37,7 @@ const initDB = () => {
             resolve(_db);
         }
 
-        mongoClient.connect(
-            "mongodb://localhost:27017/trainingWorkshops",
-            { useNewUrlParser: true, useUnifiedTopology: true },
-            dbConnect
-        );
+        mongoClient.connect(dbUrl, dbConfig, dbConnect);
     });
 };
 
