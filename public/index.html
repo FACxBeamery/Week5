@@ -1,5 +1,76 @@
 <html lang="en">
-    <head>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie-edge" />
+		<link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<title>Find a Resource</title>
+	</head>
+	<body>
+		<header>
+			<h1>Help! I'm stuck on...</h1>
+		</header>
+    <div class="overlay"></div>
+		<section id="section-form-find-topic">
+			<form id="form-find-topic">
+				<label for="topic-to-find">Input for topic</label>
+				<input
+					type="text"
+					id="topicToFind"
+					name="topictoFind"
+					label="find resources"
+					placeholder="What topic are you stuck on?"
+					required
+				/>
+				<button type="submit" id="find-topic-button" class="buttons">
+					Send for help
+				</button>
+			</form>
+		</section>
+		<section id="section-form-add-topic" style="display: none">
+			<form id="form-add-topic">
+				<label for="topic-to-add">Topic to add: </label>
+				<input
+					type="text"
+					id="topictoAdd"
+					name="topicToAdd"
+					label="add resource topic"
+					placeholder="Topic"
+					required
+				/>
+				<label for="urlToAdd">URL to add: </label>
+				<input
+					type="text"
+					id="urlToAdd"
+					name="urlToAdd"
+					label="add resource url"
+					placeholder="Input your resource's URL"
+					required
+				/>
+				<label for="commentToAdd" class="visuallyhidden"
+					>Comment about resource:
+				</label>
+				<input
+					type="text"
+					id="commentToAdd"
+					name="commentToAdd"
+					label="add resource comment"
+					placeholder="comment about your resource"
+					required
+				/>
+				<button type="submit" id="add-topic-button" class="buttons">
+					Add resource
+				</button>
+			</form>
+		</section>
+		<section id="resources-container"></section>
+	</body>
+	<script type="text/javascript" src="./js/APICalls.js"></script>
+	<script type="text/javascript" src="./js/DOMManip.js"></script>
+	<script type="text/javascript" src="./js/main.js"></script>
+
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie-edge" />
@@ -70,4 +141,5 @@
     <script type="text/javascript" src="./js/APICalls.js"></script>
     <script type="text/javascript" src="./js/DOMManip.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
+
 </html>
