@@ -6,7 +6,6 @@ const addResource = require("./handlers/addResource.js");
 router.use(express.static("public"));
 
 router.get("/resources/:topic", getResources);
-// require.params.topic
 
 router.post("/resources", addResource);
 

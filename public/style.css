@@ -1,157 +1,158 @@
 /* overlay from w3 schools tutorial */
 .overlay {
-	position: fixed; /* Sit on top of the page content */
-	display: none; /* Hidden by default */
-	width: 100%; /* Full width (cover the whole page) */
-	height: 100%; /* Full height (cover the whole page) */
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
-	z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
 }
 
 .no-topic-message,
 .post-success-message,
 .no-search-message,
 .no-add-message,
-.joi-fail-add-message {
-	display: flex;
-	flex-direction: column;
-	background-color: #e6e6e6;
-	width: 50vw;
-	height: auto;
-	text-align: center;
-	color: rgb(130, 0, 0);
-	position: absolute;
-	top: 40%;
-	left: 25%;
-	padding: 1rem;
+.joi-fail-add-message,
+.server-error-message {
+    display: flex;
+    flex-direction: column;
+    background-color: #e6e6e6;
+    width: 50vw;
+    height: auto;
+    text-align: center;
+    color: rgb(130, 0, 0);
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    padding: 1rem;
 }
 
 /* spacing guidlines */
 .spacing-1 {
-	margin-top: 0.75rem;
-	margin-bottom: 0.75rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
 }
 
 .spacing-2 {
-	margin-top: 1rem;
-	margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .spacing-3 {
-	margin-top: 1rem;
-	margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .spacing-4 {
-	margin-top: 1.5rem;
-	margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .spacing-5 {
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .spacing-6 {
-	margin-top: 2.5rem;
-	margin-bottom: 2.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
 }
 
 html,
 body,
 input,
 select {
-	text-align: center;
-	font-family: "Russo One", sans-serif;
+    text-align: center;
+    font-family: "Russo One", sans-serif;
 }
 
 header {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 2rem;
-	font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    font-size: 2.5rem;
 }
 
 .section-form-add-topic {
-	display: flex;
-	align-items: center;
-	text-align: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
 
 .section-form-find-topic {
-	display: flex;
-	align-items: center;
-	text-align: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
 
 .form-find-topic {
-	width: 36vw;
-	padding: 0.5rem 0.5rem 0 0;
-	height: 6vh;
+    width: 36vw;
+    padding: 0.5rem 0.5rem 0 0;
+    height: 6vh;
 }
 
 .form-add-topic {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .form-add-topic__input {
-	margin-bottom: 1rem;
-	font-size: 1.25rem;
-	width: 60vw;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    width: 60vw;
 }
 
 .form-add-topic__label {
-	margin-bottom: 0.5rem;
-	font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
 }
 
 .buttons {
-	font-size: 1.5rem;
-	border: 0.125rem solid #333;
-	border-radius: 0.25rem;
-	font-size: 1rem;
+    font-size: 1.5rem;
+    border: 0.125rem solid #333;
+    border-radius: 0.25rem;
+    font-size: 1rem;
 }
 
 .form {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	border: 0.125rem solid #59c3c3;
-	box-shadow: 0.125rem 0.125rem #59c3c3;
-	padding: 1.5rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.125rem solid #59c3c3;
+    box-shadow: 0.125rem 0.125rem #59c3c3;
+    padding: 1.5rem 0.5rem;
 }
 
 .form__label {
-	margin-bottom: 1rem;
-	font-size: 2rem;
-	color: white;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: white;
 }
 
 .form__input {
-	width: 80vw;
-	margin-bottom: 1rem;
-	border: 0.125rem solid #444;
-	font-size: 2rem;
+    width: 80vw;
+    margin-bottom: 1rem;
+    border: 0.125rem solid #444;
+    font-size: 2rem;
 }
 
 @media only screen and (max-width: 600px) {
-	h1 {
-		font-size: 2.5rem;
-	}
-	.form__input {
-		font-size: 1rem;
-	}
+    h1 {
+        font-size: 2.5rem;
+    }
+    .form__input {
+        font-size: 1rem;
+    }
 
-	.form-add-topic__input {
-		font-size: 0.75rem;
-	}
+    .form-add-topic__input {
+        font-size: 0.75rem;
+    }
 }
 
 @media only screen and (max-width: 700px) {
