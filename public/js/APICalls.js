@@ -1,43 +1,44 @@
 const getResourcesAPI = idOfTopicField => {
-	const topicValue = document
-		.getElementById(idOfTopicField)
-		.value.toLowerCase();
-	if (!topicValue) {
-		emptySearchOverlay();
-	} else {
-		fetch(`/resources/${topicValue}`, {
-			method: "GET",
-			headers: { "Content-Type": "application/json" }
-		})
-			.then(res => res.json())
-			.then(data => (allResources = data))
-			.then(allResources => {
-				if (allResources.length > 0) {
-					addResourcesToPage(allResources);
-				} else {
-					noTopicOverLay();
-				}
-			})
-			.catch(console.error);
-	}
+    const topicValue = document
+        .getElementById(idOfTopicField)
+        .value.toLowerCase();
+    if (!topicValue) {
+        emptySearchOverlay();
+    } else {
+        fetch(`/resources/${topicValue}`, {
+            method: "GET",
+            headers: { "Content-Type": "application/json" }
+        })
+            .then(res => res.json())
+            .then(data => (allResources = data))
+            .then(allResources => {
+                if (allResources.length > 0) {
+                    addResourcesToPage(allResources);
+                } else {
+                    noTopicOverLay();
+                    document.getElementById("topic-to-find").value = "";
+                }
+            })
+            .catch(console.error);
+    }
 };
 
 const postResourcesAPI = () => {
-	const body = {
-		topic: document.getElementById("topic-to-add").value.toLowerCase(),
-		dateAdded: Date.now(),
-		comment: document.getElementById("comment-to-add").value,
-		resourceUrl: document.getElementById("url-to-add").value
-	};
-	fetch("/resources", {
-		method: "POST",
-		headers: { "Content-Type": "application/json" },
-		body: JSON.stringify(body)
-	})
-		.then(res => res.json())
-		.then(data => (allData = data))
-		.then(allData => {
-			resourceAddOverlay();
-		})
-		.catch(console.error);
+    const body = {
+        topic: document.getElementById("topic-to-add").value.toLowerCase(),
+        dateAdded: Date.now(),
+        comment: document.getElementById("comment-to-add").value,
+        resourceUrl: document.getElementById("url-to-add").value
+    };
+    fetch("/resources", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+    })
+        .then(res => res.json())
+        .then(data => (allData = data))
+        .then(allData => {
+            resourceAddOverlay();
+        })
+        .catch(console.error);
 };
