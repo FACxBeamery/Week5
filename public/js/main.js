@@ -1,15 +1,20 @@
 //event listeners which trigger API calls and API calls trigger DOM manip
 
 document
-	.getElementById("find-topic-button")
-	.addEventListener("click", event => {
-		event.preventDefault();
-		getResourcesAPI();
-	});
+    .getElementById("find-topic-button")
+    .addEventListener("click", event => {
+        // event.preventDefault();
+        getResourcesAPI("topicToFind");
+    });
 
 document.getElementById("add-topic-button").addEventListener("click", event => {
-	event.preventDefault();
+    // event.preventDefault();
 
-	postResourcesAPI();
-	setTimeout(getResourcesAPI(), 600);
+    postResourcesAPI();
+    setTimeout(() => {
+        const topicToAddValue = document.getElementById("topictoAdd").value;
+        // if (topicValue.length > 0) {
+        getResourcesAPI(topicToAddValue);
+        // }
+    }, 600);
 });
