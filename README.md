@@ -1,10 +1,12 @@
-# Week 5 MongoDB
+
 ## Lyndsey and Thomas
 
 
 ## Project Description
 
 This website is designed to help students struggling with a certain topic find resources to help them, or add a resource themselves to help other students.
+![](https://i.imgur.com/B37Jm7P.png)
+![](https://i.imgur.com/b3rwxNa.png)
 
 ---
 
@@ -17,4 +19,3 @@ npm install ``` to import all required packages
 * run  ``` npm test  ``` to test the queries. 
 
 ---
-
