@@ -19,7 +19,11 @@ const getResourcesAPI = idOfTopicField => {
                     document.getElementById("topic-to-find").value = "";
                 }
             })
-            .catch(serverErrorOverlay());
+            .catch(error => {
+                if (error) {
+                    serverErrorOverlay();
+                }
+            });
     }
 };
 

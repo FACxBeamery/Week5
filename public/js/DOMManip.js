@@ -125,6 +125,10 @@ const failJoiOverlay = () => {
         `Sorry, that isn't a valid input, check your link is valid! We need a www. format.  `
     );
     para.appendChild(node);
+    para.setAttribute(
+        "aria-label",
+        "Sorry, that isn't a valid input, check your link is valid! We need a www. format. "
+    );
     overlay.appendChild(para);
     setTimeout(() => {
         while (overlay.firstChild) {
@@ -143,6 +147,10 @@ const serverErrorOverlay = () => {
         `We're experiencing issues on our end. Please refresh the page!`
     );
     para.appendChild(node);
+    para.setAttribute(
+        "aria-label",
+        "We're experiencing issues on our end. Please refresh the page!"
+    );
     overlay.appendChild(para);
     setTimeout(() => {
         while (overlay.firstChild) {
